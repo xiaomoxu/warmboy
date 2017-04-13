@@ -2,6 +2,7 @@ package com.rocket.items.controller;
 
 import com.rocket.items.dao.FishingGearDao;
 import com.rocket.items.entity.FishingGear;
+import com.rocket.items.service.ItemsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,9 +19,17 @@ public class ItemsController {
     @Autowired
     private FishingGearDao fishingGearDao;
 
-    @RequestMapping(value="/save",method= RequestMethod.POST)
+    @Autowired
+    private ItemsService itemsService;
+
+    @RequestMapping(value = "/save", method = RequestMethod.POST)
     public void saveItems(@RequestBody FishingGear fishingGear) {
-       // System.out.println(fishingGear.getWebUrl());
+        // System.out.println(fishingGear.getWebUrl());
         fishingGearDao.save(fishingGear);
+    }
+
+    @RequestMapping(value = "/html2image", method = RequestMethod.GET)
+    public void html2image() {
+        itemsService.createImage();
     }
 }

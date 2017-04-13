@@ -10,6 +10,8 @@
 	<modules>
 		<module>eureka-server</module>
 		<module>crawler-service</module>
+		<module>items-service</module>
+		<module>image-service</module>
 	</modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
