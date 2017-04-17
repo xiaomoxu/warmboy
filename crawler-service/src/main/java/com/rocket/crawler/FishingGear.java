@@ -1,7 +1,7 @@
-package com.rocket.items.entity;
+package com.rocket.crawler;
 
+import com.sleepycat.persist.model.Entity;
 
-import javax.persistence.*;
 
 /**
  * Created by xxu on 3/30/2017.
@@ -80,6 +80,4 @@ public class FishingGear {
     public void setCategory(String category) {
         this.category = category;
     }
-
-
 }
