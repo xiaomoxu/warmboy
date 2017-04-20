@@ -1,8 +1,11 @@
 package com.rocket.crawler;
 
+import com.rabbitmq.tools.json.JSONUtil;
 import edu.uci.ics.crawler4j.crawler.CrawlController;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.amqp.core.Message;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
@@ -15,6 +18,9 @@ import org.springframework.web.client.RestTemplate;
 public class CrawlerService {
 
     private static final Logger log = LoggerFactory.getLogger(CrawlerService.class);
+
+    @Autowired
+    private RabbitTemplate rabbitTemplate;
 
     @Autowired
     private CrawlerFactory crawlerEngineFactory;
@@ -31,6 +37,8 @@ public class CrawlerService {
     }
 
     public void saveFetchResult(FishingGear fishingGear) {
-        restTemplate.postForObject("http://items-service/save", fishingGear, FishingGear.class);
+        //restTemplate.postForObject("http://items-service/save", fishingGear, FishingGear.class);
+        String jsonStr = JsonUtils.objectToJson(fishingGear);
+        rabbitTemplate.convertAndSend(CrawlerApplication.queueName, jsonStr);
     }
 }

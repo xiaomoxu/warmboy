@@ -2,12 +2,14 @@ package com.rocket.crawler;
 
 import com.sleepycat.persist.model.Entity;
 
+import java.io.Serializable;
+
 
 /**
  * Created by xxu on 3/30/2017.
  */
 
-public class FishingGear {
+public class FishingGear implements Serializable {
     private Long id;
     private String name;
     private String productId;

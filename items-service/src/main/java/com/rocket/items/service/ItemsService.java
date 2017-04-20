@@ -1,5 +1,6 @@
 package com.rocket.items.service;
 
+import com.rocket.items.JsonUtils;
 import com.rocket.items.dao.BrandRepository;
 import com.rocket.items.dao.CategoryRepository;
 import com.rocket.items.dao.ProductRepository;
@@ -7,6 +8,7 @@ import com.rocket.items.domain.Brand;
 import com.rocket.items.domain.Category;
 import com.rocket.items.domain.Page;
 import com.rocket.items.domain.Product;
+import com.rocket.items.entity.FishingGear;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -53,5 +55,11 @@ public class ItemsService {
         product.setCategory(category);
         product.setPage(page);
         productRepository.save(product);
+    }
+
+    public void receiveMessageFromRabbitMQ(String jsonString) {
+        //System.out.println(jsonString);
+        FishingGear fishingGear = JsonUtils.jsonToObject(jsonString, null, FishingGear.class);
+        this.saveProducts(fishingGear.getName(), fishingGear.getBrandName(), fishingGear.getCategory(), fishingGear.getWebUrl());
     }
 }

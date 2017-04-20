@@ -74,7 +74,7 @@ public class Crawler extends WebCrawler {
         fishingGear.setName(name);
         fishingGear.setCategory(category);
         if (pageHtml != null || !pageHtml.equals(""))
-            fishingGear.setPageHtml(pageHtml);
+            //fishingGear.setPageHtml(pageHtml);
         crawlerService.saveFetchResult(fishingGear);
     }
 

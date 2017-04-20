@@ -110,6 +110,13 @@
     <orderEntry type="library" name="Maven: org.springframework.hateoas:spring-hateoas:0.23.0.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.plugin:spring-plugin-core:1.2.0.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.atteo:evo-inflector:1.2.1" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-amqp:1.5.2.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-messaging:4.3.7.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.amqp:spring-rabbit:1.7.1.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.amqp:spring-amqp:1.7.1.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: com.rabbitmq:http-client:1.1.1.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: com.rabbitmq:amqp-client:4.0.2" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.retry:spring-retry:1.2.0.RELEASE" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.springframework.boot:spring-boot-starter-test:1.5.2.RELEASE" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.springframework.boot:spring-boot-test:1.5.2.RELEASE" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.springframework.boot:spring-boot-test-autoconfigure:1.5.2.RELEASE" level="project" />
